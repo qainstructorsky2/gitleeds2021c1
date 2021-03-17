@@ -14,14 +14,34 @@ class Account:
     def get_balance(self):
         print("\n Available Balance=", self.balance)
 
-    # Function to withdraw cash
+    # Function to withdraw cash - without custom exceptions
+    #def  withdraw_cash(self):
+     #   amount = float(input("Enter amount to be Withdrawn: "))
+     #   if self.balance >= amount:
+     #       self.balance -= amount
+     #      print("\n You Withdrew:", amount)
+     #  else:
+     #      print("\n Insufficient balance  ")
+
+    # Function to withdraw cash - custom exceptions
     def  withdraw_cash(self):
-        amount = float(input("Enter amount to be Withdrawn: "))
-        if self.balance >= amount:
+      amount = float(input("Enter amount to be Withdrawn: "))
+      if self.balance >= amount:
+         self.balance -= amount
+
+
+    def withdraw(self, amount):
+        self.check_amount(amount)
+        # Raise a custom exception when there is insufficient balance.
+        try:
+            if amount > self.balance:
+            raise InsufficientBalanceException('Insufficient balance')
+        except:
             self.balance -= amount
-            print("\n You Withdrew:", amount)
-        else:
-            print("\n Insufficient balance  ")
+
+        finally:
+        pass #normally close DB connections or files
+
 
 
 
