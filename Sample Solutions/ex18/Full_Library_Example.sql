@@ -1,6 +1,6 @@
 
-DROP database IF EXISTS mylib;
-CREATE database mylib;
+DROP database IF EXISTS mylib2;
+CREATE database mylib2;
 use mylib;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
