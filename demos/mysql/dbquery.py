@@ -1,4 +1,4 @@
-import mysql.connector;
+import mysql.connector
 # now wrap in try ... mysql.connector.connect(host='localhost',database='mylib',user='root',password='')
 
 
